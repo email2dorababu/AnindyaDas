@@ -1,0 +1,15 @@
+ORACLE EXPLAIN PLAN FUNDAMENTALS (HD)9May15.mp4
+Explain Plan :
+
+basics of Oracle 11g Explain plan.
+
+Understanding Explain Plan
+Setup & Use Explain Plan
+PLAN_TABLE,Related Scripts and DBMS_XPLAN.DISPLAY intorduced in Oracle9i.
+Generate & View Explain Plan
+Read & Interpret Basics of Explain Plan.
+
+Note: Understanding and interpreting Explain Plan is very big thing and it needs lot of hands on experience to analyze Query plans very effectively,
+Thi tutorial is just a start.
+-----------------------------
+

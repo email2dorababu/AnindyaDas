@@ -10,3 +10,6 @@ How to find memory leaks
 Identify Memory intesinve /Memory usage
 Clustering
 Materialized views
+Index organized tables
+
+Reduce table access making use of Execution plan.

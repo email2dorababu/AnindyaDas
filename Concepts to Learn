@@ -1,0 +1,12 @@
+LOCKING
+GOOD SQL design
+GOOD index design
+Reduce logical I/O for same no of rows returned
+Reducing Disk I/O for transactions
+Types of Table Scans
+How to support concurrent Users(concurrent reads and writes (Locking))
+efficient Memory usage
+How to find memory leaks
+Identify Memory intesinve /Memory usage
+Clustering
+Materialized views

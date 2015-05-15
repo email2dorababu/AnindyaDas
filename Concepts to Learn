@@ -13,3 +13,6 @@ Materialized views
 Index organized tables
 
 Reduce table access making use of Execution plan.
+15/May/2015
+
+RIght growing index and left growing index

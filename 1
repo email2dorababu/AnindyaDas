@@ -1,4 +1,4 @@
-1. How to query a database to display all the tables in it.
+Q1. How to query a database to display all the tables in it.
 http://stackoverflow.com/questions/205736/get-list-of-all-tables-in-oracle
 
 A) if you have dba access (i.e dba grants acess to 'SELECT ANY DICTIONARY' PRIVILEGE OR 'SELECT_CATALOG_ROLE" ROLE
@@ -11,10 +11,14 @@ SELECT OWNER,TABLE_NAME FROM ALL_TABLES
 C) If you are concerned with tables that you OWN, not those that you have access to, you can use, USER_TABLES
   SELECT TABLE_NAME FROM USER_TABLES;
   Here there won't be owner column, because the owner is you.
+ 
+  Keep in mind that some "tables" may actually be "views" so you can also try running something like:
+  SELECT view_name FROM all_views;
   -----
   Legacy code is by use of TAB,DICT,TABS,CAT
   TAB,CAT VIEWS show info about tables that are in user's recycle bin. while,
   [DBA|ALL|USER]_TABLES VIEWS all filter those in recycle bin.
   DICT combines tables and synonyms and doesn't tell you who owns the object.
   CAT show infor about materialized view logs with a TABLE_TYPE of 'TABLE', which you really don't want.
-
+--------------------------------------------------------------------
+Q2.

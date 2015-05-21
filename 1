@@ -42,12 +42,14 @@ http://psoug.org/blogs/mohan/
 Transform a subquery involving the IN clause to a Join?
 Transform a statement involving an OR condition to a UNION ALL?
 ---------------------
-Insert multiple rows in to same table:
+Insert multiple rows in to same table/ multiple tables
+The below inserts 3 rows into emp and 1 row into dept table
 
 insert all 
  into emp values(1,'dora',1)
  into emp values (1,'dora',2)
  into emp values(2,'babu',3)
  into emp values(2,'babu',3)
+ into dept values(1,'sci')
 SELECT * from dual;
 ---------------------

@@ -53,7 +53,7 @@ insert all
  into dept values(1,'sci')
 SELECT * from dual;
 ---------------------
-
+Q4) remove duplicate rows in a table
 select min(rowid) from emp group by empid
  will give distinct rows, which are unique on emp id, without deplicate rowids.
 We delete all other rows based on rowid, except these by 
@@ -85,3 +85,25 @@ where rowid not in  (d min(rowid) from emp grou by empid)
 	In the above query we are generating all the rows where the row ids doesn't match  with the same emplyee id. 
 	When both the rowids are same, we generate false in the inner subquery, where the exists condition fails and we get unique rows.
 	--------------------------------------
+Q5) display row values in columns,
+example
+emp table, we have gender of each person.
+i want to display how many male/females are there as a chart i.e table
+Similar to:
+	department_name  clerks salesmen manager analyst
+	abc					1	5			1		10
+	bcd					6	9			15		24
+	
+THe tables are emp table and dept table. emp table have dept id,and job.
+
+select 
+	// with the left join you get all emps grou by dept.id
+	//count(empid) will give dept wise no of employees
+	
+	sum(decode(job,'clerks',1,0) ) clerks,
+	sum(decode(job,'salesmen',1,0)) salesmen ...
+	from 
+		emp left join dept on emp.dept_id=dept.id
+	group bby dept.id
+	----------------------------
+Q6) 

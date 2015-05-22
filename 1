@@ -53,3 +53,35 @@ insert all
  into dept values(1,'sci')
 SELECT * from dual;
 ---------------------
+
+select min(rowid) from emp group by empid
+ will give distinct rows, which are unique on emp id, without deplicate rowids.
+We delete all other rows based on rowid, except these by 
+delete from emp
+where rowid not in  (d min(rowid) from emp grou by empid)
+---------------- |  
+ CREATE TABLE emp2 AS
+    SELECT distinct *
+    FROM   emp;
+
+  DROP TABLE emp;
+
+  RENAME emp2 TO emp;
+  --------------
+  DELETE FROM emp a
+    WHERE rowid > (
+      SELECT min(rowid)
+      FROM   emp b
+      WHERE  a.emp_id = b.emp_id
+    );
+	-----------------
+	DELETE FROM emp a
+    WHERE EXISTS (
+      SELECT 'true'
+      FROM   emp b
+      WHERE  b.emp_id = a.emp_id
+        AND  b.rowid < a.rowid
+    );
+	In the above query we are generating all the rows where the row ids doesn't match  with the same emplyee id. 
+	When both the rowids are same, we generate false in the inner subquery, where the exists condition fails and we get unique rows.
+	--------------------------------------
